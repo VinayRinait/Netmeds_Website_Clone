@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  IconButton,
+  useBreakpointValue,
+  Button,
+} from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
@@ -10,7 +16,10 @@ const settings = {
   dots: true,
   slidesToShow: 5,
   slidesToScroll: 1,
-  infinite: false,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 3000,
 };
 
 export default function Carousel() {
@@ -88,9 +97,9 @@ export default function Carousel() {
   return (
     <Box
       position={"relative"}
-      height={"380px"}
+      height={"480px"}
       width={"100%"}
-      bg={"#F3F7FB"}
+      bg={"#1D4044"}
       overflow={"hidden"}
     >
       {/* CSS files for react-slick */}
@@ -163,9 +172,10 @@ export default function Carousel() {
               <Text pt={10} fontWeight={500}>
                 {url.name}
               </Text>
-              <Text pt={10} color={"#5BA41C"}>
+              <Text pt={2} color={"#5BA41C"}>
                 {url.offer}
               </Text>
+              <Button bg={"#1D4044"}>VIEW PRODUCT</Button>
             </Box>
           </Box>
         ))}
