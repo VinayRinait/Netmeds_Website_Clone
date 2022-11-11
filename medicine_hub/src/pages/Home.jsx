@@ -1,11 +1,18 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
-
+import LightningDeals from "../component/ImageSliders/LightningDeals";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import Topbrand from "../component/ImageSliders/TopBrand";
+import Navbar from "../component/Navbar";
+
+import Navbar2 from "../component/Navbar2";
+import Carousel from "../component/ImageSliders/Carousel";
 const Home = () => {
   return (
     <>
+      <Navbar />
+      <Navbar2 />
+      <Carousel />
       <Box bg={"#F3F7FB"} display={"flex"} gap={10} p={10} pt={-10}>
         <Box
           boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}
@@ -425,7 +432,7 @@ const Home = () => {
               Grab Before The Deal Ends
             </Text>
           </Box>
-          {/* <LightningDeals /> */}
+          <LightningDeals />
         </Box>
       </Box>
     </>
