@@ -7,6 +7,7 @@ import Navbar from "../component/Navbar";
 
 import Navbar2 from "../component/Navbar2";
 import Carousel from "../component/ImageSliders/Carousel";
+import Footer from "../component/Footer";
 const Home = () => {
   return (
     <>
@@ -435,6 +436,7 @@ const Home = () => {
           <LightningDeals />
         </Box>
       </Box>
+      <Footer />
     </>
   );
 };

@@ -23,12 +23,12 @@ const AddCart = (mydata) => {
     console.log(mydata, "ab");
     var finallyPost = {
       id: mydata.prodData.id,
-      imageUrl: mydata.prodData.image,
-
-      seller: mydata.prodData.mkt,
-
-      salePrice: mydata.prodData.price,
-      strikeOfPrice: mydata.prodData.mrp,
+      imageUrl: mydata.prodData.imageUrl,
+      title: mydata.prodData.title,
+      seller: mydata.prodData.seller,
+      brand: mydata.prodData.brand,
+      salePrice: mydata.prodData.salePrice,
+      strikeOfPrice: mydata.prodData.strikeOfPrice,
       qty: mydata.prodData.qty,
     };
     axios.post(
@@ -38,7 +38,7 @@ const AddCart = (mydata) => {
     alert("Item Added to the Cart");
     setFlag(true);
 
-    dispatch(cartData());
+    dispatch(cartData(finallyPost));
   };
 
   return (

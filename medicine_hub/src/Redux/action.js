@@ -8,11 +8,16 @@ import {
   LOGOUT_SUCCESS,
   NEWONNETMEDS_SUCCESS,
   SUPP_SUCCESS,
+  ADMIN_LOGIN
 } from "./actionTypes";
 
 export const login = () => ({
   type: LOGIN_SUCCESS,
 });
+
+export const adminlogin=()=>({
+  type:ADMIN_LOGIN
+})
 
 export const logout = () => ({
   type: LOGOUT_SUCCESS,
@@ -59,24 +64,6 @@ export const fetchSupplement = (payload) => async (dispatch) => {
       console.log("err");
     });
 };
-// export const fetchNewOnNetmeds = (payload) => async (dispatch) => {
-//   axios({
-//     url: "https://netmeds-server-data.herokuapp.com/api/topProducts",
-//     method: "GET",
-//     params: {
-//       q: "newnetmeds",
-//       _limit: 10,
-//     },
-//   })
-//     .then((res) => {
-//       console.log(res.data);
-//       let success = newOnNetmeds(res.data);
-//       dispatch(success);
-//     })
-//     .catch((e) => {
-//       console.log(e);
-//     });
-// };
 
 export const fetchCovidEssentials = (payload) => async (dispatch) => {
   axios({
