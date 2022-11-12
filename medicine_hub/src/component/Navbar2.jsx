@@ -112,6 +112,10 @@ const Navbar2 = () => {
               </React.Fragment>
             )}
           </Menu>
+
+          <Link to={"/wellness/admin"}>
+            <Button>Admin Page</Button>
+          </Link>
         </Box>
       </Navv>
       <Navv

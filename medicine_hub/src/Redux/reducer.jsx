@@ -7,6 +7,7 @@ import {
   BESTSELLER_SUCCESS,
   FETCHFILTERDATA,
   CART_SUCCESS,
+  ADMIN_LOGIN
 } from "./actionTypes";
 export const initState = {
   isAuth: false,
@@ -24,6 +25,12 @@ export const AuthReducer = (state = initState, action) => {
         ...state,
         isAuth: true,
       };
+    }
+    case ADMIN_LOGIN:{
+      return{
+        ...state,
+        isAuth:true
+      }
     }
 
     case LOGOUT_SUCCESS: {

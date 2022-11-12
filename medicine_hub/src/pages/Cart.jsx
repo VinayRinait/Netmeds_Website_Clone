@@ -11,7 +11,7 @@ import axios from "axios";
 
 const Cart = () => {
   const cart_Data = useSelector((state) => state.isAuth.cart);
-  console.log(cart_Data);
+  console.log(cart_Data, "cartData");
 
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
@@ -21,8 +21,9 @@ const Cart = () => {
   var bag = 0;
   for (var i = 0; i < cart_Data.length; i++) {
     console.log(cart_Data[i].salePrice);
-    bag = bag + Number(cart_Data[i]).salePrice * cart_Data[i].qty;
+    bag = bag + cart_Data[i].salePrice * cart_Data[i].qty;
     //  count++ ;
+    console.log(bag, "bag");
   }
 
   if (bag > 175) {
@@ -65,6 +66,7 @@ const Cart = () => {
     axios
       .delete(`https://netmeds-server-data.herokuapp.com/api/cart/${el.id}`)
       .then((res) => {
+        // console.log(res);
         dispatch(cartData());
       })
       .catch((e) => {
@@ -113,6 +115,7 @@ const Cart = () => {
             <Text p={5} pb={0} fontSize={"sm"} color={"grey"} mb={0}>
               PRODUCTS
             </Text>
+            {console.log(cart_Data, "vvv")}
             {cart_Data.map((el) => (
               <Box
                 key={el.id}
@@ -143,7 +146,7 @@ const Cart = () => {
                       fontWeight={500}
                       pt={2}
                     >
-                      RS.{el.salePrice * el.qty}.00
+                      RS.{Number(el.salePrice) * el.qty}.00
                     </Text>
                     <Select
                       height={8}

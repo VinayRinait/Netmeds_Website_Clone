@@ -1,4 +1,4 @@
-import { Box, Input, Text } from "@chakra-ui/react";
+import { Box, Button, Input, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -20,9 +20,7 @@ export const Nav = styled.div`
   gap: 30px;
   padding: 10px;
   padding-top: 22px;
-  ${"" /* position:fixed; */}
-  ${"" /* overflow:hidden; */}
-${"" /* top:0; */}
+  postion: static;
 `;
 export const SearchDiv = styled.div`
   height: 52px;
@@ -43,7 +41,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.isAuth.isAuth);
-  // console.log(auth)
+  console.log(auth, "auth");
 
   if (auth) {
     var userData = JSON.parse(localStorage.getItem("USERDATA"));
