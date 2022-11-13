@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Text, Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  IconButton,
+  useBreakpointValue,
+  Alert,
+} from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
@@ -232,6 +238,7 @@ export default function LightningDeals() {
               <Text color={"#717486"} as="s">
                 {el.strikeOfPrice}
               </Text>
+              {/* <Alert></Alert> */}
               <AddCart key={el.id} prodData={el} />
             </Box>
           </Box>
