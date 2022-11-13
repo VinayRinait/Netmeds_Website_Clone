@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../Redux/action";
 import Navbar from "../component/Navbar";
+import { useSelector } from "react-redux";
 
 export default function SignUp() {
   const [flag, setFlag] = React.useState(false);
@@ -30,7 +31,7 @@ export default function SignUp() {
   const [otp6, setOtp6] = React.useState("");
   const navigate = useNavigate();
 
-  // const auth = useSelector((state)=>state.isAuth.isAuth)
+  const auth = useSelector((state) => state.isAuth.isAuth);
 
   const dispatch = useDispatch();
 

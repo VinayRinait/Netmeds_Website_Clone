@@ -4,6 +4,7 @@ import { Box, Button } from "@chakra-ui/react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export const Navv = styled.div`
   height: 60px;
   width: 100%;
@@ -14,6 +15,8 @@ export const Navv = styled.div`
   padding: 0px;
 `;
 const Navbar2 = () => {
+  const adminn = useSelector((state) => state.isAuth2);
+  console.log(adminn, "navvv222");
   return (
     <>
       <Navv style={{ paddingLeft: "100px", paddingRight: "100px" }}>
@@ -114,7 +117,7 @@ const Navbar2 = () => {
           </Menu>
 
           <Link to={"/wellness/admin"}>
-            <Button>Admin Page</Button>
+            <Button>Admin</Button>
           </Link>
         </Box>
       </Navv>

@@ -13,10 +13,12 @@ import {
 } from "@chakra-ui/react";
 import { adminlogin } from "../Redux/action";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const AdminSignup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   let initial = {
     email: email,
     password: password,

@@ -7,9 +7,10 @@ import {
   BESTSELLER_SUCCESS,
   FETCHFILTERDATA,
   CART_SUCCESS,
-  ADMIN_LOGIN
+  ADMIN_LOGIN,
 } from "./actionTypes";
 export const initState = {
+  isAuth2: false,
   isAuth: false,
   supplementData: [],
   newOnNetmeds: [],
@@ -26,11 +27,11 @@ export const AuthReducer = (state = initState, action) => {
         isAuth: true,
       };
     }
-    case ADMIN_LOGIN:{
-      return{
+    case ADMIN_LOGIN: {
+      return {
         ...state,
-        isAuth:true
-      }
+        isAuth2: true,
+      };
     }
 
     case LOGOUT_SUCCESS: {

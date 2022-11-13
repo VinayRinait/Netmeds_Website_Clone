@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { cartData } from "../Redux/action";
+import { Alert } from "./Alert";
 
 // keep the add to cart component here
 const AddCart = (mydata) => {
@@ -36,6 +37,7 @@ const AddCart = (mydata) => {
       finallyPost
     );
     alert("Item Added to the Cart");
+
     setFlag(true);
 
     dispatch(cartData(finallyPost));
