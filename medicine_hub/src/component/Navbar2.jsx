@@ -117,7 +117,9 @@ const Navbar2 = () => {
           </Menu>
 
           <Link to={"/wellness/admin"}>
-            <Button>Admin</Button>
+            <Button bg="#24AEB1" p={5}>
+              Admin
+            </Button>
           </Link>
         </Box>
       </Navv>
