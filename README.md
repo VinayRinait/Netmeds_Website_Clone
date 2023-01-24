@@ -3,7 +3,7 @@
 # Clone of Netmeds.com, Individual Project
 
   NetMeds
-        is an Indian Online Pharmacy selling a wide range of prescription and OTC medicines
+       About Netmeds Clone is my first individual project in Masai, which was built in my construct week in 5 days.My main objective was to complete all the main functionality of this Pharmacitical E-commerce website starting with Sign-up to till the buying a products from the website.I used React.js, React-Redux, JavaScripts, HTML, CSS & Chakra UI
 
 
 # Home Page
