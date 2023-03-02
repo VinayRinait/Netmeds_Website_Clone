@@ -1,20 +1,101 @@
+ 💻 CLONED PROJECT NAME⭐ ====>>>> ✨Netmeds💫
+> <br>
 
 
-# Clone of Netmeds.com, Individual Project
+## [![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medicine-hub.vercel.app/)
 
-  NetMeds
-       About Netmeds Clone is my first individual project in Masai, which was built in my construct week in 5 days.My main objective was to complete all the main functionality of this Pharmacitical E-commerce website starting with Sign-up to till the buying a products from the website.I used React.js, React-Redux, JavaScripts, HTML, CSS & Chakra UI
+![ShopGIF](https://media.giphy.com/media/F6ZC06fX688qk/giphy.gif)
+
+> A Netmeds website clone is a project to create a platform that provides similar products and services as Netmeds, an Indian online pharmacy. This is an individual project that aims to complete the cloning process within five days. Efficient planning and implementation of technical aspects, such as web development, database management, and payment gateway integration, are essential for success. The website should be user-friendly, responsive, and functional across different devices. Creating a Netmeds website clone within five days requires technical skills, efficient project management, and attention to detail.
+---
 
 
-# Home Page
+<br>
 
-![netmeds png](https://user-images.githubusercontent.com/108014776/207068108-dd9ea544-3454-4983-bcf1-065dc0f3c2b5.png)
+💻Unique Project Name & logo :- Medicine Hub
 
-#Add To Cart
-![Screenshot (674)](https://user-images.githubusercontent.com/108014776/214232288-08eb89a9-efb2-42e2-9c18-f24117bee5ab.png)
-#sign up Page
-![Screenshot (676)](https://user-images.githubusercontent.com/108014776/214232321-9ca60b01-32ea-46d2-9677-0178727ad3ee.png)
+![CRuise (1)-modified](https://medicine-hub.vercel.app/static/media/Logo.9c966f8b432ccbcd9b3e.png)
+
+---
+
+## 💫Tech-Stack->
+
+- #### For Frontend :-
+
+  - `HTML5`
+  - `CSS3`
+     - `JavaScript `
+  - `ReactJS`
+     - `ES6 `
+
+- #### For Styling :-
+
+  - `Chakra UI `
+  - `React Bootstrap `
+
+- #### For live Project : -
+  - `Vercel`
+
+## Features ✨:-
+
+---
+
+| Serial No | Feature                                                                           |
+| --------- | --------------------------------------------------------------------------------- |
+| 1         | User signup, User Login                                              |
+| 2         | Medicine Page with Filter by different Category ,Pagination, Sort Functionalities |
+| 3         | payment feature                                              |
+| 4         | Dynamic cart page By quentity you can change price                                                    |
+| 5         |                                                    |
+| 6         | 
+---
+
+## Flow
+
+```mermaid
+graph TD;
+    App-->HomePage
+    HomePage-->SignUpPage;
+    HomePage-->loginPage;
+       HomePage --> Medicine Page
+       CategoryPage-->All Medicine Page
+       CartPage -->Payment
+       CartPage-->PaymentPage
+      
+```
+
+---
+
+## Screenshots 📷
+
+---
+
+# HomePage
+
+![Screenshot (3)](https://user-images.githubusercontent.com/108014776/222342812-93b0db52-b922-4c3d-b81d-d30709c71f6d.png)
+
+# Signup | Login
+
+![Screenshot (5)](https://user-images.githubusercontent.com/108014776/222343027-3e771702-2cb6-4fc4-b793-c42385cf3d79.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/108014776/222343040-36511a33-bab3-4e92-999d-18c8fa9512f8.png)
+
+
+# Medicine Page
+
+![Screenshot (7)](https://user-images.githubusercontent.com/108014776/222343082-46c70803-a13b-47ef-9514-2ad9f24d08c2.png)
+
+
 #Cart Page
-![Screenshot (675)](https://user-images.githubusercontent.com/108014776/214232349-20802a2d-0707-4552-92ac-0006322d78e9.png)
-#login Page
-![Screenshot (677)](https://user-images.githubusercontent.com/108014776/214232379-67974433-30ac-482f-9806-eda7dae3cc9e.png)
+
+
+![Screenshot (9)](https://user-images.githubusercontent.com/108014776/222343448-65fbb0a2-b6c5-454a-9c9b-324c9b06c758.png)
+
+# Payment Page
+
+
+![Screenshot (10)](https://user-images.githubusercontent.com/108014776/222343437-deac8783-e179-4a56-9101-c4c59f958ff2.png)
+
+
+---
+
+<h1 align="center">✨Thank You✨</h1>
