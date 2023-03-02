@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+💻 CLONED PROJECT NAME⭐ ====>>>> ✨Netmeds💫
+> <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## [![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medicine-hub.vercel.app/)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> A Netmeds website clone is a project to create a platform that provides similar products and services as Netmeds, an Indian online pharmacy. This is an individual project that aims to complete the cloning process within five days. Efficient planning and implementation of technical aspects, such as web development, database management, and payment gateway integration, are essential for success. The website should be user-friendly, responsive, and functional across different devices. Creating a Netmeds website clone within five days requires technical skills, efficient project management, and attention to detail.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+💻Unique Project Name & logo :- Medicine Hub
 
-### `npm run build`
+![CRuise (1)-modified](https://medicine-hub.vercel.app/static/media/Logo.9c966f8b432ccbcd9b3e.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💫Tech-Stack->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- #### For Frontend :-
 
-### `npm run eject`
+  - `HTML5`
+  - `CSS3`
+     - `JavaScript `
+  - `ReactJS`
+     - `ES6 `
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- #### For Styling :-
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - `Chakra UI `
+  - `React Bootstrap `
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- #### For live Project : -
+  - `Vercel`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features ✨:-
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Serial No | Feature                                                                           |
+| --------- | --------------------------------------------------------------------------------- |
+| 1         | User signup, User Login                                              |
+| 2         | Medicine Page with Filter by different Category ,Pagination, Sort Functionalities |
+| 3         | payment feature                                              |
+| 4         | Dynamic cart page By quentity you can change price                                                    |
+| 5         |                                                    |
+| 6         | 
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Flow
 
-### Code Splitting
+```mermaid
+graph TD;
+    App-->HomePage
+    HomePage-->SignUpPage;
+    HomePage-->loginPage
+       HomePage --> MedicinrPage
+       CategoryPage-->CartPage
+       CartPage -->Payment
+     CartPage -->Homepage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+---
 
-### Analyzing the Bundle Size
+## Screenshots 📷
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+# HomePage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Screenshot (3)](https://user-images.githubusercontent.com/108014776/222342812-93b0db52-b922-4c3d-b81d-d30709c71f6d.png)
 
-### Advanced Configuration
+# Signup | Login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Screenshot (5)](https://user-images.githubusercontent.com/108014776/222343027-3e771702-2cb6-4fc4-b793-c42385cf3d79.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/108014776/222343040-36511a33-bab3-4e92-999d-18c8fa9512f8.png)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Medicine Page
 
-### `npm run build` fails to minify
+![Screenshot (7)](https://user-images.githubusercontent.com/108014776/222343082-46c70803-a13b-47ef-9514-2ad9f24d08c2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#Cart Page
+
+
+![Screenshot (9)](https://user-images.githubusercontent.com/108014776/222343448-65fbb0a2-b6c5-454a-9c9b-324c9b06c758.png)
+
+# Payment Page
+
+
+![Screenshot (10)](https://user-images.githubusercontent.com/108014776/222343437-deac8783-e179-4a56-9101-c4c59f958ff2.png)
+
+
+---
+
+<h1 align="center">✨Thank You✨</h1>
+
+
