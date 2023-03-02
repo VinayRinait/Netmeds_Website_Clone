@@ -5,6 +5,7 @@ import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 export const Navv = styled.div`
   height: 60px;
   width: 100%;
@@ -13,6 +14,21 @@ export const Navv = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 0px;
+  @media screen and (max-width: 768px) {
+    // display: none;
+  }
+`;
+const Navv2 = styled.div`
+  height: 60px;
+  width: 100%;
+  background: #24aeb1;
+  color: #ffffffcc;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const Navbar2 = () => {
   const adminn = useSelector((state) => state.isAuth2);
@@ -24,10 +40,13 @@ const Navbar2 = () => {
           <Menu>
             {({ isOpen }) => (
               <React.Fragment>
-                <MenuButton bg={"#24AEB1"} as={Button}>
-                  Medicines
-                  <ChevronDownIcon />
-                </MenuButton>
+                <Link to="/wellness/covidEssentials">
+                  <MenuButton bg={"#24AEB1"} as={Button}>
+                    Medicines
+                    <ChevronDownIcon />
+                  </MenuButton>
+                </Link>
+
                 <MenuList>
                   <MenuItem color={"black"}>All Medicines </MenuItem>
                   <MenuItem color={"black"}>
@@ -38,12 +57,13 @@ const Navbar2 = () => {
             )}
           </Menu>
         </Box>
-        <Link to="/wellness" style={{ fontWeight: "500", paddingTop: "7px" }}>
+        <Link
+          to="/wellness/covidEssentials"
+          style={{ fontWeight: "500", paddingTop: "7px" }}
+        >
           Wellness
         </Link>
-        <Link to="/" style={{ fontWeight: "500", paddingTop: "7px" }}>
-          Lab Test
-        </Link>
+
         <Box>
           <Menu>
             {({ isOpen }) => (
@@ -53,7 +73,7 @@ const Navbar2 = () => {
                   <ChevronDownIcon />
                 </MenuButton>
                 <MenuList>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Personal Care</MenuItem>
                   </Link>
@@ -61,7 +81,7 @@ const Navbar2 = () => {
                     {" "}
                     <MenuItem color="#151B39">Make-up</MenuItem>
                   </Link>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Hair</MenuItem>
                   </Link>
@@ -69,19 +89,19 @@ const Navbar2 = () => {
                     {" "}
                     <MenuItem color="#151B39">Skin Care</MenuItem>
                   </Link>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Tools & Appliances</MenuItem>
                   </Link>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Mom & Baby</MenuItem>
                   </Link>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Fragrances</MenuItem>
                   </Link>
-                  <Link to="/">
+                  <Link to="/wellness/covidEssentials">
                     {" "}
                     <MenuItem color="#151B39">Men's Grooming</MenuItem>
                   </Link>
@@ -117,13 +137,13 @@ const Navbar2 = () => {
           </Menu>
 
           <Link to={"/wellness/admin"}>
-            <Button bg="#24AEB1" p={5}>
+            {/* <Button bg="#24AEB1" p={5}>
               Admin
-            </Button>
+            </Button> */}
           </Link>
         </Box>
       </Navv>
-      <Navv
+      <Navv2
         style={{
           paddingLeft: "100px",
           paddingRight: "100px",
@@ -136,19 +156,19 @@ const Navbar2 = () => {
           paddingTop: "10px",
         }}
       >
-        <Link to="/">COVID Essentials</Link>
-        <Link to="/">Diabetes</Link>
-        <Link to="/">Eyewear</Link>
-        <Link to="/">Ayush</Link>
-        <Link to="/">Ayurvedic</Link>
-        <Link to="/">Homeopathy</Link>
-        <Link to="/">Fitness</Link>
-        <Link to="/">Mom & Baby</Link>
-        <Link to="/">Devices</Link>
-        <Link to="/">Surgicals</Link>
-        <Link to="/">Sexual Wellness</Link>
-        <Link to="/">Treatements</Link>
-      </Navv>
+        <Link to="/wellness/covidEssentials">COVID Essentials</Link>
+        <Link to="/wellness/covidEssentials">Diabetes</Link>
+        <Link to="/wellness/covidEssentials">Eyewear</Link>
+        <Link to="/wellness/covidEssentials">Ayush</Link>
+        <Link to="/wellness/covidEssentials">Ayurvedic</Link>
+        <Link to="/wellness/covidEssentials">Homeopathy</Link>
+        <Link to="/wellness/covidEssentials">Fitness</Link>
+        <Link to="/wellness/covidEssentials">Mom & Baby</Link>
+        <Link to="/wellness/covidEssentials">Devices</Link>
+        <Link to="/wellness/covidEssentials">Surgicals</Link>
+        <Link to="/wellness/covidEssentials">Sexual Wellness</Link>
+        <Link to="/wellness/covidEssentials">Treatements</Link>
+      </Navv2>
     </>
   );
 };

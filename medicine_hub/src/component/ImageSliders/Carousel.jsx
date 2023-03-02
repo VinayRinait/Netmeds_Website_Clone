@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+
 const settings = {
   dots: true,
   arrows: false,
@@ -26,6 +27,7 @@ const Carousel = () => {
     "https://www.netmeds.com/images/cms/aw_rbslider/slides/1666355540_Home_Bannercold.jpg",
     "https://www.netmeds.com/images/cms/aw_rbslider/slides/1666362102_Home_Bannernmsnew.jpg",
   ];
+
   return (
     <Box
       position={"relative"}
@@ -77,8 +79,8 @@ const Carousel = () => {
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={310}
-            width={1000}
+            height={{ base: 200, md: 310 }}
+            width={{ base: "100%", md: 1000 }}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

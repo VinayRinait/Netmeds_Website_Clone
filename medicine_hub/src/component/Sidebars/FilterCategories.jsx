@@ -40,25 +40,31 @@ const FilterCategories = () => {
   }, [setSearchParams, categoryValues, dispatch, searchParams]);
 
   return (
-    <Box>
+    <Box
+      display="flex"
+      flexDirection={{ base: "column", md: "row" }}
+      alignItems="center"
+    >
       <Box
         pl={2}
+        pr={{ base: 2, md: 0 }}
+        mb={{ base: 4, md: 0 }}
         rounded={"md"}
         boxShadow={" rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}
         p={5}
-        ml={4}
+        flex={1}
+        mr={{ md: 4 }}
       >
         <Text>Category</Text>
-        <br></br>
-        {/* <Input placeholder='search here' onChange={(e)=>categoryHandler(e.target.value)}/> */}
+        <br />
         <CheckboxGroup
           colorScheme="green"
           defaultValue={categoryValues}
           onChange={categoryHandler}
         >
-          <VStack alignItems={"baseline"}>
-            <Checkbox value="covidEssentials">Covid Essentials</Checkbox>
-            <Checkbox value="vitaminsAndSuppliments">
+          <VStack alignItems="baseline">
+            <Checkbox value="medicine">Covid Essentials</Checkbox>
+            <Checkbox value="vitamins-suppliments">
               Vitamins & Suppliments
             </Checkbox>
             <Checkbox value="momAndBaby">Mom & Baby</Checkbox>
@@ -70,10 +76,10 @@ const FilterCategories = () => {
         </CheckboxGroup>
       </Box>
 
-      <Box display={{ base: "block", md: "none" }} p="0rem 2rem">
+      <Box display={{ base: "block", md: "none" }}>
         <Menu closeOnSelect={false}>
           <MenuButton as={Button} colorScheme="blue">
-            MenuItem
+            Menu
           </MenuButton>
           <MenuList minWidth="240px">
             <MenuOptionGroup defaultValue="asc" title="Order" type="radio">

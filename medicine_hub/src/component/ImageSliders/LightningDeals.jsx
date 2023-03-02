@@ -4,8 +4,10 @@ import {
   Text,
   Box,
   IconButton,
-  useBreakpointValue,
-  Alert,
+  Image,
+  Flex,
+  Heading,
+  Button,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -13,6 +15,7 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import AddCart from "../AddCart";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Settings for the slider
 const settings = {
@@ -20,6 +23,32 @@ const settings = {
   slidesToShow: 5,
   slidesToScroll: 1,
   infinite: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 export default function LightningDeals() {
@@ -30,13 +59,13 @@ export default function LightningDeals() {
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
-  const side = useBreakpointValue({ base: "30%", md: "10px" });
+  // const top = useBreakpointValue({ base: "90%", md: "50%" });
+  // const side = useBreakpointValue({ base: "30%", md: "10px" });
 
   // These are the images used in the slide
 
   useEffect(() => {
-    axios("https://netmeds-server-data.herokuapp.com/api/data", {
+    axios("https://link-ten-zeta.vercel.app/products", {
       params: {
         _limit: 15,
       },
@@ -47,101 +76,6 @@ export default function LightningDeals() {
       })
       .catch((e) => console.log(e));
   }, []);
-
-  //   const cards = [
-  //     {
-  //       id: 1,
-  //       name: "Pure Nutrition Progut Plus Veg Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/812809/pure_nutrition_progut_plus_for_healthy_digestion_veg_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Herbs Nutriproducts Pvt. Ltd. ",
-  //       price: "Rs. 1,499.00",
-  //       mrp: 1799.0,
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "INLIFE Triphala Extract Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858567/inlife_triphala_extract_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Private Limited",
-  //       price: 243.27,
-  //       mrp: 499.0,
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "INLIFE Guggul Extract Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858568/inlife_guggul_extract_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Private Limited",
-  //       price: 329.34,
-  //       mrp: 499.0,
-  //     },
-  //     {
-  //       id: 4,
-  //       name: "INLIFE Shatavari Extract Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858569/inlife_shatavari_extract_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Private Limited",
-  //       price: 289.42,
-  //       mrp: 499.0,
-  //     },
-  //     {
-  //       id: 5,
-  //       name: "HealthVit Ginkgo Biloba 180 mg Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/815204/healthvit_ginkgo_biloba_180_mg_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: West Coast Works Ltd",
-  //       price: 860.0,
-  //       mrp: 1000.0,
-  //     },
-  //     {
-  //       id: 6,
-  //       name: "HealthVit Horse Chestnut 500 mg Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/815273/healthvit_horse_chestnut_500_mg_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: West Coast Works Ltd",
-  //       price: 688.0,
-  //       mrp: 800.0,
-  //     },
-
-  //     {
-  //       id: 7,
-  //       name: "INLIFE Diastan Plus Diabetic Care Powder 300 gm",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858539/inlife_diastan_plus_diabetic_care_powder_300_gm_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Pvt Limited",
-  //       price: 495.0,
-  //       mrp: 900.0,
-  //     },
-
-  //     {
-  //       id: 8,
-  //       name: "Keral-Ayurveda Extract Capsules 60's",
-  //       image:
-  //         " https://www.netmeds.com/images/product-v1/150x150/838353/healthvit_boswellia_serrata_500_mg_capsule_60_s_0.jpg",
-  //       mkt: "Mkt: West Coast  Ltd",
-  //       price: 387.0,
-  //       mrp: 499.0,
-  //     },
-  //     {
-  //       id: 9,
-  //       name: "INLIFE Guggul Extract Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858568/inlife_guggul_extract_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Private Limited",
-  //       price: 329.34,
-  //       mrp: 499.0,
-  //     },
-  //     {
-  //       id: 10,
-  //       name: "INLIFE Shatavari Extract Capsules 60's",
-  //       image:
-  //         "https://www.netmeds.com/images/product-v1/150x150/858569/inlife_shatavari_extract_capsules_60_s_0.jpg",
-  //       mkt: "Mkt: Inlife Pharma Private Limited",
-  //       price: 289.42,
-  //       mrp: 459.0,
-  //     },
-  //   ];
 
   return (
     <Box
@@ -165,82 +99,97 @@ export default function LightningDeals() {
       />
       {/* Left Icon */}
       <IconButton
-        marginTop={"0px"}
-        aria-label="left-arrow"
-        colorScheme="gray"
-        borderRadius="full"
-        position="absolute"
-        left={side}
-        top={top}
+        zIndex={20}
+        w="70px"
+        h={"70px"}
+        position={"absolute"}
+        rounded={"50%"}
+        shadow={"dark-lg"}
+        top={"35%"}
+        left="10px"
+        bg="none"
         transform={"translate(0%, -50%)"}
-        zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BiLeftArrowAlt />
+        <BiLeftArrowAlt fontSize={"50px"} color={"#ff6f61"} />
       </IconButton>
       {/* Right Icon */}
       <IconButton
-        marginTop={"0px"}
-        aria-label="right-arrow"
-        colorScheme="gray"
-        borderRadius="full"
-        position="absolute"
-        right={side}
-        top={top}
+        zIndex={20}
+        w="70px"
+        h={"70px"}
+        position={"absolute"}
+        rounded={"50%"}
+        shadow={"dark-lg"}
+        top={"35%"}
+        right="10px"
+        bg="none"
         transform={"translate(0%, -50%)"}
-        zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BiRightArrowAlt />
+        <BiRightArrowAlt fontSize={"40px"} color={"#ff6f61"} />
       </IconButton>
       {/* Slider */}
+      <Box display={"flex"} justifyContent="space-between">
+        <Box>
+          <Heading fontSize={{ base: "20px", md: "none" }} ml="10px">
+            Vitamins & Suppliments | supplement of the week
+          </Heading>
+        </Box>
+        <Box>
+          <Link to={"/medicine"}>
+            <Button color={"white"} bg={"#24AEB1"}>
+              SEE ALL
+            </Button>
+          </Link>
+        </Box>
+      </Box>
+
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {data.map((el) => (
           <Box
-            marginTop={8}
-            key={el.id}
-            height={380}
-            width={800}
-            position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            // backgroundImage={`url(${url})`}
+            flexShrink={0}
+            w={{ base: "50%", md: "15%" }}
+            _hover={{ shadow: "xl" }}
+            p={"15px"}
           >
-            <Box
-              fontSize="sm"
-              border={"1px solid grey"}
-              rounded={10}
-              p={4}
-              ml={8}
-              bg={"white"}
-              width={212}
-              height={365}
-            >
-              <img
-                style={{ paddingLeft: "14px", paddingTop: "8px" }}
-                src={el.imageUrl}
-                alt=""
-              />
-              <Text color={"black"} fontWeight={500}>
-                {el.brand}
-              </Text>
-              <Text as={"i"} fontSize="smaller" color={"#717486"}>
-                {el.category}
-              </Text>
-              <br></br>
-              <span style={{ color: "#6F7284", fontWeight: "500px" }}>
-                Best Price*{" "}
-              </span>
-              <span style={{ color: "#EF4281" }}>{el.salePrice}</span>
-              <br></br>
-              <span style={{ color: "#6F7284" }}>MRP : </span>
-              <Text color={"#717486"} as="s">
-                {el.strikeOfPrice}
-              </Text>
-              {/* <Alert></Alert> */}
-              <AddCart key={el.id} prodData={el} />
+            <Box w={"100%"} h={"150px"} mb={"10px"}>
+              <Image h="100%" src={el.src} />
             </Box>
+            <Text color="grey" fontSize={"15px"} mb={"10px"} fontWeight={600}>
+              {el.title}
+            </Text>
+            {/* <Text color="grey" fontSize={"13px"} mb={"10px"} fontWeight={600}>
+              {el.packsize}
+            </Text> */}
+            <Flex gap={"10px"}>
+              <Text
+                color="grey"
+                fontSize={"13px"}
+                mb={"10px"}
+                textDecor="line-through"
+                fontWeight={600}
+              >
+                {el["strike-price"] ? `₹${el["strike-price"]}` : null}
+              </Text>
+              <Text
+                fontSize={"13px"}
+                mb={"10px"}
+                color="green"
+                fontWeight={600}
+              >
+                {el["discount-percent"]}
+              </Text>
+            </Flex>
+            <Heading
+              color="grey"
+              fontSize={"15px"}
+              mb={"10px"}
+              fontWeight={600}
+            >
+              {el["price"] ? `₹${el["price"]}` : null}
+            </Heading>
+            <AddCart key={el.id} prodData={el} />
           </Box>
         ))}
       </Slider>

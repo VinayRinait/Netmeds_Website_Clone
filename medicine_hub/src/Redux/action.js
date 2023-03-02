@@ -8,16 +8,16 @@ import {
   LOGOUT_SUCCESS,
   NEWONNETMEDS_SUCCESS,
   SUPP_SUCCESS,
-  ADMIN_LOGIN
+  ADMIN_LOGIN,
 } from "./actionTypes";
 
 export const login = () => ({
   type: LOGIN_SUCCESS,
 });
 
-export const adminlogin=()=>({
-  type:ADMIN_LOGIN
-})
+export const adminlogin = () => ({
+  type: ADMIN_LOGIN,
+});
 
 export const logout = () => ({
   type: LOGOUT_SUCCESS,
@@ -49,10 +49,10 @@ export const takeMeToCart = (data) => ({
 
 export const fetchSupplement = (payload) => async (dispatch) => {
   axios({
-    url: "https://netmeds-server-data.herokuapp.com/api/data",
+    url: "https://link-ten-zeta.vercel.app",
     method: "GET",
     params: {
-      q: "vitaminsAndSuppliments",
+      q: "vitamins-suppliments",
       _limit: 10,
     },
   })
@@ -67,10 +67,10 @@ export const fetchSupplement = (payload) => async (dispatch) => {
 
 export const fetchCovidEssentials = (payload) => async (dispatch) => {
   axios({
-    url: "https://netmeds-server-data.herokuapp.com/api/data",
+    url: "https://link-ten-zeta.vercel.app/",
     method: "GET",
     params: {
-      q: "covidEssentials",
+      q: "medicine",
       _limit: 10,
     },
   })
@@ -86,10 +86,10 @@ export const fetchCovidEssentials = (payload) => async (dispatch) => {
 
 export const fetchBestSeller = (payload) => async (dispatch) => {
   axios({
-    url: "https://netmeds-server-data.herokuapp.com/api/topProducts",
+    url: "https://link-ten-zeta.vercel.app",
     method: "GET",
     params: {
-      q: "bestSeller",
+      q: "products",
       _limit: 10,
     },
   })
@@ -104,16 +104,16 @@ export const fetchBestSeller = (payload) => async (dispatch) => {
     });
 };
 
-export const fetchData = (payload, page, q, costOrder) => {
+export const fetchData = (payload, page, q, price) => {
   return (dispatch) => {
-    axios("https://netmeds-server-data.herokuapp.com/api/data", {
+    axios("https://link-ten-zeta.vercel.app/medicine", {
       params: {
         ...payload,
-        // _page: page,
-        // _limit: 20,
+        _page: page,
+        _limit: 10,
         q: q,
-        _sort: "salePrice",
-        _order: `${costOrder}`,
+        _sort: "price",
+        _order: `${price}`,
       },
     })
       .then((r) => {
@@ -125,7 +125,7 @@ export const fetchData = (payload, page, q, costOrder) => {
 };
 
 export const cartData = (payload) => (dispatch) => {
-  axios("https://netmeds-server-data.herokuapp.com/api/cart")
+  axios("https://link-ten-zeta.vercel.app/cart")
     .then((res) => {
       console.log(res.data);
       let cartAction = takeMeToCart(res.data);

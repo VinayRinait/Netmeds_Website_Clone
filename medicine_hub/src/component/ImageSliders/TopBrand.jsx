@@ -10,6 +10,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
+import { Link, useParams } from "react-router-dom";
 
 // Settings for the slider
 const settings = {
@@ -102,7 +103,6 @@ export default function Carousel() {
       bg={"#1D4044"}
       overflow={"hidden"}
     >
-      {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
         type="text/css"
@@ -114,14 +114,15 @@ export default function Carousel() {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      {/* Left Icon */}
+
+      {/* Modify the position of the arrows based on the screen size */}
       <IconButton
         marginTop={"0px"}
         aria-label="left-arrow"
         colorScheme="gray"
         borderRadius="full"
         position="absolute"
-        left={side}
+        left={useBreakpointValue({ base: "10px", md: side })}
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
@@ -129,14 +130,15 @@ export default function Carousel() {
       >
         <BiLeftArrowAlt />
       </IconButton>
-      {/* Right Icon */}
+
+      {/* Modify the position of the arrows based on the screen size */}
       <IconButton
         marginTop={"0px"}
         aria-label="right-arrow"
         colorScheme="gray"
         borderRadius="full"
         position="absolute"
-        right={side}
+        right={useBreakpointValue({ base: "10px", md: side })}
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
@@ -175,7 +177,9 @@ export default function Carousel() {
               <Text pt={2} color={"#5BA41C"}>
                 {url.offer}
               </Text>
-              <Button bg={"#1D4044"}>VIEW PRODUCT</Button>
+              <Link to="/wellness/covidEssentials">
+                <Button bg={"#1D4044"}>VIEW PRODUCT</Button>
+              </Link>
             </Box>
           </Box>
         ))}

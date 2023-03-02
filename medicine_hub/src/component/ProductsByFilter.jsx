@@ -23,7 +23,7 @@ const ProductsByFilter = () => {
   const [page, setPage] = useState(1);
   const [q, setQ] = useState("");
   // const [ratingOrder,setRatingOrder] = useState("desc");
-  const [costOrder, setCostOrder] = useState("ab");
+  const [costOrder, setCostOrder] = useState("");
 
   const [searchParams] = useSearchParams();
   const filteredData = useSelector((state) => state.isAuth.filteredData);
@@ -43,9 +43,11 @@ const ProductsByFilter = () => {
   // console.log(products)
 
   return (
-    <Box display="flex">
-      {/* <Stack > */}
-      <Box>
+    <Box display={{ base: "block", md: "flex" }}>
+      <Box
+        flex={{ base: "1", md: "0 0 25%" }}
+        maxWidth={{ base: "100%", md: "25%" }}
+      >
         <Text m={4} mb={0} fontSize="2xl">
           Filters
         </Text>
@@ -59,18 +61,22 @@ const ProductsByFilter = () => {
         <FilterCategories />
       </Box>
 
-      <Box m={4}>
-        <Box display={"flex"} justifyContent="space-between" mr={4}>
+      <Box m={4} flex={{ base: "1", md: "0 0 75%" }}>
+        <Box
+          display={"flex"}
+          justifyContent={{ base: "flex-start", md: "space-between" }}
+          mr={{ base: 0, md: 4 }}
+        >
           <Text p={4}>Showing {length} items from 200</Text>
           <Box display={"flex"}>
-            <Text mt={"4"}>Sort By Price : </Text>
+            <Text mt={{ base: 4, md: 0 }}>Sort By Price : </Text>
             <Button
               disabled={costOrder === "desc"}
               onClick={() => setCostOrder("desc")}
               size={"sm"}
               border={"1px solid blue "}
               rounded={"md"}
-              mt={"4"}
+              mt={{ base: 4, md: 0 }}
               bg={"white"}
               ml={4}
             >
@@ -82,7 +88,7 @@ const ProductsByFilter = () => {
               size={"sm"}
               border={"1px solid blue "}
               rounded={"md"}
-              mt={"4"}
+              mt={{ base: 4, md: 0 }}
               bg={"white"}
               ml={4}
             >
@@ -91,25 +97,28 @@ const ProductsByFilter = () => {
           </Box>
         </Box>
 
-        <Text pl={8} pt={3} color={"#747789"} fontSize={"large"}>
+        <Text
+          pl={{ base: 0, md: 8 }}
+          pt={3}
+          color={"#747789"}
+          fontSize={"large"}
+        >
           ALL PRODUCTS
         </Text>
         <Flex flexWrap="wrap" justifyContent="space-around">
           {filteredData.map((product) => {
             return (
-              <>
-                <ProductSimple
-                  key={product.id}
-                  id={product.id}
-                  image={product.imageUrl}
-                  title={product.title}
-                  seller={product.seller}
-                  brand={product.brand}
-                  salePrice={product.salePrice}
-                  strikeOfPrice={product.strikeOfPrice}
-                  daata={product}
-                />
-              </>
+              <ProductSimple
+                key={product.id}
+                id={product.id}
+                image={product.src}
+                title={product.title}
+                seller={product.company}
+                brand={product.drug}
+                salePrice={product.price}
+                strikeOfPrice={product.price}
+                daata={product}
+              />
             );
           })}
         </Flex>
@@ -122,7 +131,6 @@ const ProductsByFilter = () => {
           <Button onClick={() => setPage(page + 1)}>NEXT</Button>
         </center>
       </Box>
-      {/* </Stack> */}
     </Box>
   );
 };

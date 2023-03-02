@@ -11,17 +11,23 @@ const CovidEssentialsPage = () => {
     <>
       <Navbar />
       <Navbar2 />
-      <Box display={"flex"} gap={"8"} bg={"#F3F3F3"} height={"auto"} p={4}>
+      <Box
+        display={{ sm: "block", md: "flex" }}
+        gap={{ md: "8" }}
+        bg={"#F3F3F3"}
+        height={"auto"}
+        p={4}
+      >
         <Box
           height={"325"}
           cursor={"pointer"}
           overflowY={"scroll"}
           scrollMargin={"-16px"}
-          width={215}
+          width={{ sm: "100%", md: 215 }}
           p={4}
           rounded={"md"}
           bg={"white"}
-          m={2}
+          m={{ sm: "0 0 16px 0", md: "0 8px 0 0" }}
         >
           <Text pb={2} borderBottom={"1px solid #F5F6F7"} fontSize="larger">
             Categories

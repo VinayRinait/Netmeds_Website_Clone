@@ -1,4 +1,4 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -11,7 +11,7 @@ const AddCart = (mydata) => {
   const [flag, setFlag] = useState(false);
   const [count, setCount] = React.useState(1);
   const dispatch = useDispatch();
-
+  const Toast = useToast();
   const handleIncrement = (value) => {
     setCount(Number(count + value));
   };
@@ -19,24 +19,29 @@ const AddCart = (mydata) => {
   const handleDecrement = (value) => {
     count > 1 ? setCount(count - value) : setFlag(false);
   };
-  // console.log(finallyPost)
+
   const handleSave = async (mydata) => {
     console.log(mydata, "ab");
     var finallyPost = {
       id: mydata.prodData.id,
-      imageUrl: mydata.prodData.imageUrl,
+      imageUrl: mydata.prodData.src,
       title: mydata.prodData.title,
-      seller: mydata.prodData.seller,
-      brand: mydata.prodData.brand,
-      salePrice: mydata.prodData.salePrice,
-      strikeOfPrice: mydata.prodData.strikeOfPrice,
-      qty: mydata.prodData.qty,
+      seller: mydata.prodData.category,
+      brand: mydata.prodData.packsize,
+      salePrice: mydata.prodData.price,
+      strikeOfPrice: "mydata.prodData.strike-price",
+      qty: mydata.prodData.qty || 1,
     };
-    axios.post(
-      "https://netmeds-server-data.herokuapp.com/api/cart",
-      finallyPost
-    );
-    alert("Item Added to the Cart");
+    console.log(finallyPost);
+    axios.post("https://link-ten-zeta.vercel.app/cart", finallyPost);
+    Toast({
+      title: "Succesfull",
+      description: "Item Added to Cart Successfully",
+      position: "top",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
 
     setFlag(true);
 
