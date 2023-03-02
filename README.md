@@ -4,7 +4,7 @@
 
 ## [![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medicine-hub.vercel.app/)
 
-![ShopGIF](https://media.giphy.com/media/F6ZC06fX688qk/giphy.gif)
+
 
 > A Netmeds website clone is a project to create a platform that provides similar products and services as Netmeds, an Indian online pharmacy. This is an individual project that aims to complete the cloning process within five days. Efficient planning and implementation of technical aspects, such as web development, database management, and payment gateway integration, are essential for success. The website should be user-friendly, responsive, and functional across different devices. Creating a Netmeds website clone within five days requires technical skills, efficient project management, and attention to detail.
 ---
@@ -56,14 +56,13 @@
 graph TD;
     App-->HomePage
     HomePage-->SignUpPage;
-    HomePage-->loginPage;
-       HomePage --> Medicine Page
-       CategoryPage-->All Medicine Page
+    HomePage-->loginPage
+       HomePage --> MedicinrPage
+       CategoryPage-->CartPage
        CartPage -->Payment
-       CartPage-->PaymentPage
-      
-```
+     CartPage -->Homepage
 
+```
 ---
 
 ## Screenshots 📷
